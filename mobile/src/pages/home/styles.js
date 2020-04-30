@@ -43,8 +43,8 @@ export default StyleSheet.create({
     serviceIcon: {
         marginHorizontal: 10,
         backgroundColor: '#de2424',
-        width: 51,
-        height: 51,
+        width: 58,
+        height: 58,
         borderRadius: 30
     },
 
@@ -75,7 +75,7 @@ export default StyleSheet.create({
         margin: 12,
         borderRadius: 15,
         width: '95%',
-        height: '45%',
+        height: '50%',
     },
 
     blockServices: {
