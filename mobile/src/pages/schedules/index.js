@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { View, Image, Text } from 'react-native';
+import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
+import Dialog, { DialogContent } from 'react-native-popup-dialog';
 
 import logoImg from '../../assets/logo.png';
 
@@ -22,11 +23,18 @@ export default function agend() {
             <View style={styles.block}>
                 <View>
                     <Text >
+                        Header
+                    </Text>
+                </View>
+            </View>
+            <View style={styles.block}>
+                <View>
+                    <Text >
                         Seus Horarios marcados
                     </Text>
                 </View>
             </View>
-            <View>
+            <View style={styles.block}>
                 <View>
                     <Text >
                         Selecione o dia
@@ -38,7 +46,7 @@ export default function agend() {
                     </Text>
                 </View>
             </View>
-            <View>
+            <View style={styles.block}>
                 <View>
                     <Text >
                         Horarios Disponiveis
@@ -59,20 +67,24 @@ export default function agend() {
                     </Text>
                 </View>
             </View>
-            <View>
-                <View>
-                    <Text >
-                        40,00
-                    </Text>
-                    <Text >
-                        30min
-                    </Text>
-                </View>
-                <View>
-                    <Text
-                        onPress={navigateToDetail}>
-                        agendar
-                    </Text>
+            <View style={styles.blockFooter}>
+                <View style={styles.blockFooterContent}>
+                    <View style={styles.valores}>
+                        <Text style={styles.valoresTxt}>
+                            R$ 40,00
+                        </Text>
+                        <Text style={styles.valoresTxt}>
+                            30 min
+                        </Text>
+                    </View>
+                    <TouchableOpacity
+                        onPress={navigateToDetail}
+                        style={styles.button}
+                    >
+                        <Text style={styles.buttonText}>
+                            AGENDAR
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>

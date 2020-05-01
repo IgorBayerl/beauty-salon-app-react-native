@@ -129,7 +129,21 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
         paddingBottom: 8,
         paddingHorizontal: 8
-    }
+    },
+    //////////////////////////////////////// 
+
+    Viewdemo: {
+        height: '100%',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'space-around'
+    },
+
+    demo: {
+        width: 160,
+        height: 200,
+
+    },
 
 
 });

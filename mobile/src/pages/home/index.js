@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
+import { View, FlatList, Alert, Image, Text, TouchableOpacity } from 'react-native';
 
-import logoImg from '../../assets/logo.png';
+
+
+import logoImg from '../../assets/HStyles/modelo-1.png/';
 
 import styles from './styles';
 
@@ -13,6 +15,28 @@ export default function home() {
     function navigateToDetail() {
         navigation.navigate('schedules');
     }
+    //////////////////////////////////////////////
+    const fidelityAlert = () =>
+        Alert.alert(
+            "Fidelidade",
+            "Cada 5 vezes que for realizado um serviço no salão você ganha um premio!",
+            [
+                { text: "Entendi", onPress: () => console.log("OK Pressed") }
+            ],
+            { cancelable: false }
+        );
+    //////////////////////////////////////////////
+    //////////////////////////////////////////////
+    const servicesAlert = () =>
+        Alert.alert(
+            "Serviços",
+            "Selecione os serviços desejados e o valor aparecerá em baixo acompanhado da estimativa de tempo para realizar o serviço ",
+            [
+                { text: "Entendi", onPress: () => console.log("OK Pressed") }
+            ],
+            { cancelable: false }
+        );
+    //////////////////////////////////////////////
 
 
 
@@ -21,7 +45,7 @@ export default function home() {
             <View style={styles.blockFidelity}>
                 <TouchableOpacity
                     style={styles.headerBlock}
-                    onPress={() => { }}
+                    onPress={fidelityAlert}
                 >
                     <Text >
                         Fidelidade
@@ -30,6 +54,7 @@ export default function home() {
                         ?
                     </Text>
                 </TouchableOpacity>
+
                 <View style={styles.fidelity}>
                     <View style={styles.fidelityCounterActive}></View>
                     <View style={styles.fidelityCounterActive}></View>
@@ -41,15 +66,17 @@ export default function home() {
             </View>
             <View style={styles.blockDemo}>
                 <TouchableOpacity
-                    onPress={() => { }}
+                    onPress={servicesAlert}
                     style={styles.headerBlock}>
                     <Text >Serviços </Text>
                     <Text >?</Text>
                 </TouchableOpacity>
-                <View>
-
+                <View style={styles.Viewdemo}>
+                    <Image style={styles.demo} source={logoImg} />
                 </View>
+
             </View>
+
 
             <View style={styles.blockServices}>
                 <FlatList
