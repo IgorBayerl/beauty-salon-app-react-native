@@ -1,11 +1,24 @@
-import services from './index';
+const array = [1, 2, 3]
 
-const ServicesActive = services;
+const stringModified = array.map(selecionar)
 
-function (ServicesActive) {
+console.log(stringModified);
 
-}
 
-export default StyleSheet.create({
+function selecionar(value) {
+    return value * 2
+};
 
-});
+const UserList = ({ isLoading, results }) => {
+    if (isLoading) {
+        return <span>Loading...</span>
+    }
+
+    return (
+        <ul>
+            {result.map((user) => (
+                <li>{user.name}</li>
+            ))}
+        </ul>
+    )
+};
