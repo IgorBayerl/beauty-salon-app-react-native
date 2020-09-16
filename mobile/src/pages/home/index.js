@@ -66,7 +66,7 @@ export default function home() {
 
         }
     }
-
+    const name = 'User'
     const [date, setDate] = useState(new Date(1598051730000));
     const [mode, setMode] = useState('date');
     const [show, setShow] = useState(false);
@@ -95,14 +95,19 @@ export default function home() {
     }
 
     async function agendar() {
-        const response = await api.post('agendar', {
-            name: 'Igor',
-            array: data,
-            date: date
-        })
-        console.log(response)
-        alert('Agendamento feito com sucesso!')
-        setModalVisible(!modalVisible)
+        try {
+            const response = await api.post('agendar', {
+                name: name,
+                array: data,
+                date: date
+            })
+            console.log(response)
+            alert('Agendamento feito com sucesso!')
+            setModalVisible(!modalVisible)
+
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 

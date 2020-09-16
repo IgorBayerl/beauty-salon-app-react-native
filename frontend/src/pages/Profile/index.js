@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiPower, FiTrash2 } from 'react-icons/fi';
+import { FiPower } from 'react-icons/fi';
 
 import api from '../../services/api';
 
@@ -13,8 +13,6 @@ export default function Profile() {
 
     const history = useHistory();
 
-    const ongId = localStorage.getItem('ongId');
-    const ongName = localStorage.getItem('ongName');
 
     useEffect(() => {
         listSchedules()
@@ -22,13 +20,14 @@ export default function Profile() {
 
 
     async function listSchedules() {
+        console.log('testeee')
         const response = await api.get('list')
         setSchedules(response.data)
         console.log(response.data)
     }
 
     async function deleteAll() {
-        const response = await api.delete('delete')
+        await api.delete('delete')
         setSchedules([])
     }
 
@@ -43,7 +42,7 @@ export default function Profile() {
     return (
         <div className="profile-container">
             <header>
-                <img src={logoImg} alt="Be The Hero" />
+                <img onClick={listSchedules} src={logoImg} alt="Be The Hero" />
                 <span>Bem vinda</span>
 
                 <Link className="button" onClick={deleteAll}>Limpar agenda</Link>

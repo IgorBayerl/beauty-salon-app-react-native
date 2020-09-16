@@ -6,7 +6,6 @@ import Logon from './pages/Logon';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import NewIncidents from './pages/NewIncident';
-import QRGen from './pages/QRGen';
 
 export default function Routges() {
     return (
@@ -16,7 +15,6 @@ export default function Routges() {
                 <Route path="/register" component={Register} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/incidents/new" component={NewIncidents} />
-                <Route path="/QRGen" component={QRGen} />
             </Switch>
         </BrowserRouter>
     );

@@ -12,22 +12,15 @@ routes.get('/list', async (request, response) => {
     return response.json(schedules);
 })
 
-
 routes.post('/agendar', async (request, response) => {
-
     const { name, date, array } = request.body;
-
     const id = crypto.randomBytes(1).toString('HEX');
-
-    // console.log(body)
     await connection('schedules').insert({
         id,
         name,
         array,
         date
     })
-    console.log(array)
-
     return response.json({ id })
 });
 
